@@ -1,0 +1,7 @@
+$counter = 0
+
+while ($true) {
+    Write-Host  $counter -NoNewline
+    Start-Sleep -Seconds 1
+    $counter = $counter + 1
+}

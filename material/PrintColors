@@ -1,0 +1,9 @@
+$a = @("Green", "Blue", "Magenta")
+$i =  0
+
+while ($i -lt $a.Length) {
+Write-Host foo -ForegroundColor $a[$i]
+$i = $i + 1
+}
+
+#https://www.reddit.com/r/homelab/comments/1b2bjzy/is_it_worth_it_to_pay_for_windows_server_just_for/
