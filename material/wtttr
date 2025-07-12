@@ -1,0 +1,25 @@
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+
+# Get the weather string
+$weather = Invoke-RestMethod "https://wttr.in/?format=3"
+
+# Create the form
+$form = New-Object System.Windows.Forms.Form
+$form.Text = "Weather"
+$form.Size = New-Object System.Drawing.Size(300,100)
+$form.StartPosition = "CenterScreen"
+$form.TopMost = $true
+
+# Create the label
+$label = New-Object System.Windows.Forms.Label
+$label.Text = $weather
+$label.AutoSize = $true
+$label.Font = New-Object System.Drawing.Font("Segoe UI",12)
+$label.Location = New-Object System.Drawing.Point(10,20)
+
+# Add label to form
+$form.Controls.Add($label)
+
+# Show the form
+[void]$form.ShowDialog()
