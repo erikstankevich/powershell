@@ -1,16 +1,13 @@
-$scriptPath = "C:\repos\powershell\weather\gui.ps1"
+$scriptPath = "C:\repos\powershell\weather\gui.exe"
 
-# Build the argument string with escaped quotes around the script path
-$arg = "-NoProfile -ExecutionPolicy Bypass -WindowsStyle Hidden -File `"$scriptPath`""
-
-# Create the action
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $arg
+# Create the action (no need for powershell.exe)
+$action = New-ScheduledTaskAction -Execute $scriptPath
 
 # Define triggers
 $trigger1 = New-ScheduledTaskTrigger -Daily -At "09:00AM"
 $trigger2 = New-ScheduledTaskTrigger -Daily -At "02:55PM"
 
-# Register the scheduled task as SYSTEM with highest privileges
+# Register the scheduled task
 Register-ScheduledTask -TaskName "WeatherGui" `
     -Action $action `
     -Trigger $trigger1, $trigger2 `
