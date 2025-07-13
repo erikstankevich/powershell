@@ -1,0 +1,2 @@
+Invoke-RestMethod -Method Get https://wttr.in/?format=3" 
+Invoke-RestMethod "https://ipinfo.io/json"
