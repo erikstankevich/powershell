@@ -5,6 +5,7 @@ Add-Type -Assemblyname System.Drawing
 $rRay = @(1,2,3,4,5,6,7,8,9)
 $gridx = @(0, 50, 100, 0, 50, 100, 0, 50, 100)
 $gridy = @(0, 0, 0, 50, 50, 50, 100, 100, 100)
+$i = 0
 
 $form = New-Object System.Windows.Forms.Form
 
