@@ -1,0 +1,22 @@
+$excel = New-Object -ComObject Excel.Application
+$excel.Visible = $true
+
+# Open workbook with relative path (current directory)
+$workbook = $excel.Workbooks.Open((Resolve-Path ".\Mappe1.xlsx").Path)
+$sheet = $workbook.Sheets.Item(1)
+
+$range = $sheet.Range("A1:A10")
+$range.FormatConditions.Delete()
+
+$targetDate = Get-Date "2025-07-20 01:00:00"
+$startDate = Get-Date "1899-12-31"
+$excelSerialDate = ($targetDate - $startDate).TotalDays
+
+$formatCondition = $range.FormatConditions.Add(1, 1, $excelSerialDate)
+$formatCondition.Interior.ColorIndex = 22
+
+$workbook.Save()
+$workbook.Close($false)
+$excel.Quit()
+
+# Release COM objects omitted for brevity (add if needed)
