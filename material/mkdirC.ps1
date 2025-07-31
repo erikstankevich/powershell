@@ -6,6 +6,8 @@
 #winget install steam
 #winget install Discord.Discord
 #winget install qBittorrent.qBittorrent
+#winget install Telegram.TelegramDesktop
+#winget install neovim
 
 
 #Start-Process -FilePath "cmd.exe" -ArgumentList '/k ssh-keygen -t ed25519 -C "21estankevich@gmail.com"' -WindowStyle Normal
