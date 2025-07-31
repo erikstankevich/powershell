@@ -1,24 +1,24 @@
-#$mkdir = New-Item -Path "C:\repos" -ItemType Directory
+New-Item -Path "C:\repos" -ItemType Directory
 
-#winget install git.git
-#winget install vscode
-#winget install Mozilla.Firefox.eu
-#winget install steam
-#winget install Discord.Discord
-#winget install qBittorrent.qBittorrent
-#winget install Telegram.TelegramDesktop
-#winget install neovim
+winget install git.git
+winget install vscode
+winget install Mozilla.Firefox.eu
+winget install steam
+winget install Discord.Discord
+winget install qBittorrent.qBittorrent
+winget install Telegram.TelegramDesktop
+winget install neovim
 
 
-#Start-Process -FilePath "cmd.exe" -ArgumentList '/k ssh-keygen -t ed25519 -C "21estankevich@gmail.com"' -WindowStyle Normal
-#Start-Sleep -Seconds 2
-#$wshell = New-Object("cmd.exe")
-#EStart-Sleep -Seconds 1
-#$wshell.SendKeys("{ENTER}")
-#EStart-Sleep -Seconds 1
-#$wshell.SendKeys("{ENTER}")
-#EStart-Sleep -Seconds 1
-#$wshell.SendKeys("{ENTER}")
+Start-Process -FilePath "cmd.exe" -ArgumentList '/k ssh-keygen -t ed25519 -C "21estankevich@gmail.com"' -WindowStyle Normal
+Start-Sleep -Seconds 2
+$wshell = New-Object("cmd.exe")
+EStart-Sleep -Seconds 1
+$wshell.SendKeys("{ENTER}")
+EStart-Sleep -Seconds 1
+$wshell.SendKeys("{ENTER}")
+EStart-Sleep -Seconds 1
+$wshell.SendKeys("{ENTER}")
 
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name HideIcons -Value 1
 
