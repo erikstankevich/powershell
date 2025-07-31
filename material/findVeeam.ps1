@@ -7,8 +7,9 @@ $Items = $Monitoring.Items
 $Veeam = $Items | Where-Object {$_.Subject -like "*[Failed]*"} 
 $Body = $Veeam | Where-Object {$_.Body -like "*veeam*"}
 $Unlike = $Body | Where-Object {$_.Subject -notlike "*success*"}
+$Suspicious = $Unlike | Where-Object {$_.Subject -notlike "*Suspicious*"}
 
 
-foreach ($item in $Unlike){
+foreach ($item in $Suspicious){
     Write-Host $item.Subject
 }
